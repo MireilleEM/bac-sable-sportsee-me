@@ -1,0 +1,15 @@
+# Dépendances (les dossiers trop lourds qu'on ne met jamais sur GitHub)
+node_modules/
+
+# Environnement et secrets
+.env
+.env.local
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Dossiers de build (générés automatiquement)
+.next/
+dist/
+build/
