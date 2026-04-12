@@ -1,0 +1,178 @@
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  font-family: sans-serif;
+  /* ajoute fond rose pour mieux visualiser la zone du container --- IGNORE --- */
+  /*background-color: "pink";*/
+}
+
+/* --- COLONNE GAUCHE (Formulaire) --- */
+.leftColumn {
+  width: 100%;
+  background-color: #F2F3FF;
+  display: flex;
+  flex-direction: column;
+  padding: 55px 50px 0 50px;
+}
+
+/* Sur les grands écrans (PC), la colonne prend 43% */
+@media (min-width: 1024px) {
+  .leftColumn {
+    width: 43%;
+    padding: 55px 100px 0 100px;
+  }
+}
+
+.logoWrapper {
+  margin-bottom: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.formCard {
+  background-color: white;
+  border-radius: 24px;
+  padding: 32px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: auto;
+  margin-top: 40px;
+}
+
+@media (min-width: 1024px) {
+  .formCard {
+    padding: 40px;
+  }
+}
+
+.formTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #3B38D6;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+.formSubtitle {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.input {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.input:focus {
+  border-color: #3B38D6;
+  box-shadow: 0 0 0 1px #3B38D6;
+}
+
+.submitBtn {
+  background-color: #3B38D6;
+  color: white;
+  border-radius: 8px;
+  padding: 16px;
+  font-weight: 600;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submitBtn:hover {
+  background-color: #2b29a3;
+}
+
+.forgotPasswordContainer {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.forgotPasswordLink {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.forgotPasswordLink:hover {
+  color: #3B38D6;
+  text-decoration: underline;
+}
+
+/* --- COLONNE DROITE (Image) --- */
+.rightColumn {
+  display: none; /* Caché sur mobile */
+  position: relative;
+}
+/* Sur les grands écrans (PC), l'image prend les 57% restants */
+@media (min-width: 1024px) {
+  .rightColumn {
+    display: block;
+    width: 57%; 
+    position: relative;
+    height: 100vh;
+    background-color: #e5e7eb;
+  }
+}
+
+.image {
+  object-fit: cover; /* Remplacer par 'contain' l'image en entier sans rognage est trop étroite*/
+  object-position: center;
+  width: 100%;
+}
+
+.badge {
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Ligne ajoutée pour Safari (iPhone/Mac) */
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border-radius: 50px;
+  padding: 12px 24px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.badgeText {
+  font-size: 14px;
+  color: #3B38D6;
+  font-weight: 500;
+  margin: 0;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+}
