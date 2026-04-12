@@ -1,0 +1,299 @@
+/* --- VARIABLES ET RESET --- */
+:root {
+  --bg-color: #F8F9FE;
+  --card-bg: #FFFFFF;
+  --primary: #3B28CC;
+  --text-main: #000000;
+  --text-muted: #8A8A8A;
+  --radius: 12px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- LAYOUT GLOBAL --- */
+
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.dashboard-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* --- HEADER (DESIGN PILULE) --- */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 40px 20px 40px; /* Espacement global en haut de page */
+  width: 100%;
+  box-sizing: border-box;
+  background: transparent; /* Le fond de la page reste visible (bleu clair) */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.right-nav-block {
+  display: flex;
+  align-items: center;
+  gap: 32px; 
+  white-space: nowrap; 
+  flex-shrink: 0; 
+  
+  /* conteneur blanc */
+  background-color: #FFFFFF; 
+  padding: 16px 32px; /* L'espace à l'intérieur du bloc blanc */
+  border-radius: 50px; /* Les bords très arrondis */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.02); /* Légère ombre élégante */
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.main-nav a { 
+  text-decoration: none; 
+  color: var(--text-main); 
+  font-size: 14px; 
+  font-weight: 400; 
+}
+
+.user-action-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.separator { 
+  color: #E0E0E0; 
+  font-size: 16px; 
+}
+
+.logout { 
+  text-decoration: none;
+  color: var(--primary); /* Le bleu typique de SportSee */
+  font-size: 14px; 
+  font-weight: 500; 
+}
+
+
+
+/* --- CARTES GÉNÉRIQUES --- */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+/* --- SECTIONS SPECIFIQUES --- */
+
+/* Le conteneur parent (le paragraphe) */
+.ai-message {
+  margin: 0;
+  display: flex;
+  flex-direction: row; /* Force l'alignement horizontal */
+  align-items: center;
+  gap: 12px;
+}
+
+/* La boîte de l'icône verrouillée */
+.ai-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; /* Largeur stricte */
+  height: 20px; /* Hauteur stricte */
+  flex-shrink: 0; /* Interdiction formelle de se faire écraser */
+  color: #3B28CC; /* La couleur est transmise au SVG ici */
+}
+
+/* Le SVG adapté à sa boîte */
+.ai-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Le texte */
+.ai-text {
+  font-size: 15px;
+  color: #3B28CC; 
+  font-weight: 500;
+}
+
+
+
+.ai-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.03);
+}
+.ai-banner p{
+  margin: 0;
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  height: 51px;
+}
+
+
+/* --- EN-TÊTE PROFIL --- */
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* crée le dégradé */
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FE 100%); 
+  padding: 24px;
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  /* Optionnel : une ombre très légère pour détacher la carte du fond */
+  /*box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.02);*/
+  /*box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.03);*/
+}
+
+.profile-info { 
+  display: flex; 
+  gap: 16px; 
+  align-items: center; 
+}
+
+.avatar-placeholder {
+  width: 104px;
+  height: 117px;
+  background: #F0F0F0;
+  border-radius: 8px;
+  overflow: hidden;     /* ← coupe l'image aux bords */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+h3{
+font-size: 28px;
+font-weight: 600;
+line-height: 100%;
+}
+
+h4 { 
+    margin: 0; 
+    font-size: 22px; 
+    font-weight: 500;
+}
+p { 
+    margin-bottom: 19px; 
+    font-size: 14px;
+    font-weight: 400; 
+    color: var(--text-muted);
+}
+.blue{
+  color: var(--primary);
+}
+.red{
+  color: #FF4D4D;
+}
+
+
+.profile-info h1 { margin: 0; font-size: 20px; }
+.member-since { color: var(--text-muted); margin: 4px 0 0 0; font-size: 14px; }
+
+.total-distance-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+.badge-value {
+  background: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  height: 90px;
+  /* Ajout pour aligner l'icône et le texte */
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  font-size: 22px;
+  font-weight: 500;
+}
+
+/* --- GRILLES --- */
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.stats-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- TYPOGRAPHIE DES GRAPHIQUES --- */
+.section-title { margin-bottom: 16px; }
+.section-subtitle { font-size: 16px; color: var(--text-muted); margin-top: -10px; margin-bottom: 24px;}
+
+.chart-card h3 { margin: 0; font-size: 22px; color: var(--primary); }
+.chart-card .subtitle { color: var(--text-muted); font-size: 12px; margin-bottom: 24px; }
+
+.donut-card h3 { margin: 0; font-size: 24px; color: var(--primary); }
+.donut-card .highlight { font-size: 14px; color: var(--text-muted); font-weight: normal; }
+.donut-card .subtitle { color: var(--text-muted); font-size: 12px; margin-bottom: 24px; }
+
+.stat-label { font-size: 14px; color: var(--text-main); margin: 0; font-weight: 500;}
+.stat-value { font-size: 24px; font-weight: bold; margin: 8px 0 0 0; }
+.unit-blue { font-size: 14px; font-weight: normal; color: #B6BDFC; }
+.unit-red { font-size: 14px; font-weight: normal; color: #FCC1B6; }
+
+/* Placeholder visuel */
+.chart-placeholder {
+  height: 250px;
+  background: #F0F0F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #888;
+  border: 1px dashed #CCC;
+}
